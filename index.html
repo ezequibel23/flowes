@@ -448,6 +448,30 @@
 
  <script src="pink-flowers.js"></script>
   <script>
+    window.onload = () => {
+  // perguntas ao carregar a página
+  let aceita = confirm("My lady gostaria de receber essa cartinha?");
+  if (!aceita) {
+    let ama = confirm("Por que clicou em NÃO? Você me ama?");
+    if (ama) {
+      let prova = confirm("Então prove, me mande uma foto de calcinha");
+      alert("Isso foi romântico ou isso foi babaca?");
+    }
+    confirm("Perdón my lady, estava zuando. Então você é minha princesinha?");
+    confirm("Prove seu amor: quem você prefere, eu ou o Taehyung?");
+    alert("Te amo te amo Leti Leti");
+    aceita = confirm("Quer a cartinha SIM ou NÃO?");
+  }
+
+  // se no final aceitar, ativa o clique no coração
+  if (aceita) {
+    document.getElementById('heart').addEventListener('click', () => {
+      document.getElementById('card').classList.add('open');
+    });
+  } else {
+    alert("Então nada de cartinha por enquanto 😢");
+  }
+};
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
       document.getElementById('flowers').style.display = 'block';
