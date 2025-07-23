@@ -108,7 +108,7 @@
 <body class="not-loaded">
   <!-- FLORES ORIGINAIS COMPLETAS -->
   <div class="night"></div>
-  <div class="flowers">
+  <div class="flowers"> id="flowers" style="display: none;">
     <div class="flower flower--1">
         <div class="flower__leafs flower__leafs--1">
           <div class="flower__leaf flower__leaf--1"></div>
@@ -415,20 +415,19 @@
   </div>
 
   <!-- CARTA -->
-          <div class="card" id="card">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="heart" id="heart">
-          <!-- Cabeça do Coelho -->
-        <div class="head" id="bunny-head">
-          <div class="ear-left"><div class="inner-ear"></div></div>
-          <div class="ear-right"><div class="inner-ear"></div></div>
-          <div class="eye-left"><div class="pupil"></div></div>
-          <div class="eye-right"><div class="pupil"></div></div>
-          <div class="nose"><div class="line"></div></div>
-          <div class="blush-left"></div>
-          <div class="blush-right"></div>
-        </div>
+<div class="card" id="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="heart" id="heart"></div>
+      <div class="head" id="bunny-head">
+  <div class="ear-left"><div class="inner-ear"></div></div>
+  <div class="ear-right"><div class="inner-ear"></div></div>
+  <div class="eye-left"><div class="pupil"></div></div>
+  <div class="eye-right"><div class="pupil"></div></div>
+  <div class="nose"><div class="line"></div></div>
+  <div class="blush-left"></div>
+  <div class="blush-right"></div>
+</div>
     </div>
     <div class="card-back" style="text-align: center;">
       <img src="namorada.jpg" style="width: 100px; border-radius: 50%; margin-bottom: 10px;" />
@@ -437,12 +436,22 @@
     </div>
   </div>
 </div>
+        </div>
+      </div>
+      <div class="card-back" style="text-align: center;">
+        <img src="namorada.jpg" alt="namorada" />
+        <div class="message">Falando em cabelo bonito, lembrei de você</div>
+        <div class="question">Aceita ser minha namorada?</div>
+      </div>
+    </div>
+  </div>
 
-      
-  <script src="pink-flowers.js"></script>
+ <script src="pink-flowers.js"></script>
   <script>
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
+      document.getElementById('flowers').style.display = 'block';
+    document.getElementById('bg-music').play();
     });
   </script>
 </body>
