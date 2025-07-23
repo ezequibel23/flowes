@@ -288,7 +288,7 @@
           <div class="flower__g-fr__leaf flower__g-fr__leaf--8"></div>
         </div>
       </div>
-
+    
       <div class="long-g long-g--0">
         <div class="grow-ans" style="--d: 3s">
           <div class="leaf leaf--0"></div>
@@ -412,6 +412,13 @@
     <script src="pink-flowers.js"></script>
   </body>
 </html>
+</div>
+
+<!-- Questionário Inicial -->
+  <div id="container">
+    <h1 class="question-box">My lady gostaria de receber essa cartinha?</h1>
+    <button class="button" onclick="resposta1('sim')">SIM</button>
+    <button class="button" onclick="resposta1('nao')">NÃO</button>
   </div>
 
   <!-- CARTA -->
@@ -452,20 +459,56 @@
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
       document.getElementById('flowers').style.display = 'block';
-    const music = document.getElementById('bg-music');
     });
-  </script>
-    <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const music = document.getElementById('bg-music');
-    music.volume = 1;
-    music.play().catch((err) => {
-      console.warn("Autoplay bloqueado. Música será tocada no primeiro clique.");
-      document.addEventListener('click', () => {
-        music.play();
-      }, { once: true });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const music = document.getElementById('bg-music');
+      music.volume = 1;
+      music.play().catch(() => {
+        document.addEventListener('click', () => music.play(), { once: true });
+      });
+      document.getElementById('heart').style.pointerEvents = 'none';
     });
-  });
+
+    const container = document.getElementById('container');
+
+    function resposta1(resposta) {
+      if (resposta === 'sim') {
+        container.innerHTML = `<h1 class="question-box">Por que clicou em NÃO? Você me ama?</h1>
+        <button class="button" onclick="resposta2('sim')">SIM</button>
+        <button class="button" onclick="resposta2('nao')">NÃO</button>`;
+      } else {
+        resposta1('sim');
+      }
+    }
+
+    function resposta2(resposta) {
+      container.innerHTML = `<h1 class="question-box">Então prove, me mande uma foto de calcinha</h1>
+      <button class="button" onclick="resposta3('romantico')">Isso foi romântico</button>
+      <button class="button" onclick="resposta3('babaca')">Isso foi babaca</button>`;
+    }
+
+    function resposta3(_) {
+      container.innerHTML = `<h1 class="question-box">Perdon My Lady, estaja zuando, então você é minha princesinha?</h1>
+      <button class="button" onclick="resposta4()">SIM</button>
+      <button class="button" onclick="resposta4()">NÃO</button>`;
+    }
+
+    function resposta4() {
+      container.innerHTML = `<h1 class="question-box">Prove seu amor: quem você prefere, eu ou o Taehyung?</h1>
+      <button class="button" onclick="resposta5()">Você</button>
+      <button class="button" onclick="resposta5()">Taehyung</button>`;
+    }
+
+    function resposta5() {
+      container.innerHTML = `<h1 class="question-box">Te amo te amo Leti Leti! Quer a cartinha?</h1>
+      <button class="button" onclick="finalizar()">SIM</button>
+      <button class="button" onclick="finalizar()">NÃO</button>`;
+    }
+
+    function finalizar() {
+      container.innerHTML = `<h1 class="question-box">Clique no coração para abrir sua cartinha, My Lady!</h1>`;
+      document.getElementById('heart').style.pointerEvents = 'auto';
 </script>
 
 </body>
