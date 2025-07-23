@@ -539,13 +539,31 @@
 </div>
 
 
-<script src="pink-flowers.js"></script>
-<body>
-
-<!-- QUESTIONÁRIO INICIAL -->
-
+ <script src="pink-flowers.js"></script>
+  <body>
+  <script>
+    document.getElementById('heart').addEventListener('click', () => {
+      document.getElementById('card').classList.add('open');
+      document.getElementById('flowers').style.display = 'block';
+    const music = document.getElementById('bg-music');
+    });
+  </script>
+    <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    music.volume = 1;
+    music.play().catch((err) => {
+      console.warn("Autoplay bloqueado. Música será tocada no primeiro clique.");
+      document.addEventListener('click', () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
 
 </body>
-<audio autoplay="" id="bg-music" loop="">
-<source src="https://files.catbox.moe/qfcvow.m4a" type="audio/mp3"/>
+<audio id="bg-music" autoplay loop>
+  <source src="https://files.catbox.moe/qfcvow.m4a" type="audio/mp3">
 </audio>
+
+</html>
