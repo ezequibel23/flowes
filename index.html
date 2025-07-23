@@ -434,18 +434,5 @@
       document.getElementById('card').classList.add('open');
     });
   </script>
-window.addEventListener('DOMContentLoaded', () => {
-    const music = document.getElementById('bg-music');
-    music.volume = 1;
-    music.play().catch((err) => {
-      console.warn("Autoplay bloqueado. Música será tocada no primeiro clique.");
-      document.addEventListener('click', () => {
-        music.play();
-      }, { once: true });
-    });
-  });
 </body>
-<audio id="bg-music" autoplay loop>
-  <source src="https://files.catbox.moe/qfcvow.m4a" type="audio/mp3">
-</audio>
 </html>
