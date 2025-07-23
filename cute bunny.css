@@ -11,10 +11,10 @@ body {
 }
 
 .head {
-  position: absolute;
-  width: 33%;
+  position: relative;
+  width: 100px;
   height: 40%;
-  background: #f6e8e6;
+  background: transparente;
   left: 30%;
   top: 35%;
   border-radius: 50%;
