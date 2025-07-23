@@ -415,30 +415,47 @@
   </div>
 
   <!-- CARTA -->
-<body class="not-loaded">
-  <!-- Perguntas iniciais -->
-  <div id="question-container" style="text-align:center; font-family: Arial; margin-top:50px;">
-    <h1 id="question-text">My lady gostaria de receber essa cartinha?</h1>
-    <div>
-      <button class="button" id="btn-sim">SIM</button>
-      <button class="button" id="btn-nao">NÃO</button>
+<!-- Perguntas iniciais -->
+<div id="question-container" style="text-align:center; font-family: Arial; margin-top:50px;">
+  <h1 id="question-text">My lady gostaria de receber essa cartinha?</h1>
+  <div>
+    <button class="button" id="btn-sim">SIM</button>
+    <button class="button" id="btn-nao">NÃO</button>
+  </div>
+</div>
+
+<div class="card" id="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="heart" id="heart"></div>
+      <div class="head" id="bunny-head">
+  <div class="ear-left"><div class="inner-ear"></div></div>
+  <div class="ear-right"><div class="inner-ear"></div></div>
+  <div class="eye-left"><div class="pupil"></div></div>
+  <div class="eye-right"><div class="pupil"></div></div>
+  <div class="nose"><div class="line"></div></div>
+  <div class="blush-left"></div>
+  <div class="blush-right"></div>
+</div>
+    </div>
+    <div class="card-back" style="text-align: center;">
+      <img src="namorada.jpg" style="width: 100px; border-radius: 50%; margin-bottom: 10px;" />
+      <div class="message" style="font-size: 16px; margin-bottom: 5px;">Falando em cabelo bonito, lembrei de você</div>
+      <div class="question" style="font-size: 18px; font-weight: bold; margin-top: 2px;">Aceita ser minha namorada?</div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+      <div class="card-back" style="text-align: center;">
+        <img src="namorada.jpg" alt="namorada" />
+        <div class="message">Falando em cabelo bonito, lembrei de você</div>
+        <div class="question">Aceita ser minha namorada?</div>
+      </div>
     </div>
   </div>
 
-  <!-- Coração e carta -->
-  <div class="card" id="card" style="display:none;">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="heart" id="heart"></div>
-      </div>
-      <div class="card-back" style="text-align:center;">
-        <img src="namorada.jpg" style="width: 100px; border-radius: 50%; margin-bottom: 10px;" />
-        <div class="message" style="font-size: 16px; margin-bottom: 5px;">Falando em cabelo bonito, lembrei de você</div>
-        <div class="question" style="font-size: 18px; font-weight: bold; margin-top: 2px;">Aceita ser minha namorada?</div>
-      </div>
-    </div>
-  </div>
-
+ <script src="pink-flowers.js"></script>
 <script>
 const perguntas = [
   {texto: "My lady gostaria de receber essa cartinha?", sim: 1, nao: 2},
@@ -483,43 +500,9 @@ document.getElementById('heart').addEventListener('click', () => {
   document.getElementById('card').classList.add('open');
 });
 
-// mostrar a primeira pergunta
 mostrarPergunta(0);
 </script>
-</body>
 
-<div class="card" id="card">
-  <div class="card-inner">
-    <div class="card-front">
-      <div class="heart" id="heart"></div>
-      <div class="head" id="bunny-head">
-  <div class="ear-left"><div class="inner-ear"></div></div>
-  <div class="ear-right"><div class="inner-ear"></div></div>
-  <div class="eye-left"><div class="pupil"></div></div>
-  <div class="eye-right"><div class="pupil"></div></div>
-  <div class="nose"><div class="line"></div></div>
-  <div class="blush-left"></div>
-  <div class="blush-right"></div>
-</div>
-    </div>
-    <div class="card-back" style="text-align: center;">
-      <img src="namorada.jpg" style="width: 100px; border-radius: 50%; margin-bottom: 10px;" />
-      <div class="message" style="font-size: 16px; margin-bottom: 5px;">Falando em cabelo bonito, lembrei de você</div>
-      <div class="question" style="font-size: 18px; font-weight: bold; margin-top: 2px;">Aceita ser minha namorada?</div>
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-      <div class="card-back" style="text-align: center;">
-        <img src="namorada.jpg" alt="namorada" />
-        <div class="message">Falando em cabelo bonito, lembrei de você</div>
-        <div class="question">Aceita ser minha namorada?</div>
-      </div>
-    </div>
-  </div>
-
- <script src="pink-flowers.js"></script>
   <script>
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
