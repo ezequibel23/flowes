@@ -450,6 +450,24 @@
   <body>
   <script>
     document.getElementById('heart').addEventListener('click', () => {
+      let aceita = confirm("My lady gostaria de receber essa cartinha?");
+  if (aceita) {
+    document.getElementById('card').classList.add('open');
+  } else {
+    let ama = confirm("Por que clicou em NÃO? Você me ama?");
+    if (ama) {
+      let prova = confirm("Então prove, me mande uma foto de calcinha");
+      if (prova) {
+        alert("Isso foi romântico ou isso foi babaca?");
+      } else {
+        alert("Isso foi romântico ou isso foi babaca?");
+      }
+    }
+    let princesinha = confirm("Perdón my lady, estava zuando. Então você é minha princesinha?");
+    let preferencia = confirm("Prove seu amor: quem você prefere, eu ou o Taehyung?");
+    alert("Te amo te amo Leti Leti");
+    let querCartinha = confirm("Quer a cartinha SIM ou NÃO?");
+    if (querCartinha) {
       document.getElementById('card').classList.add('open');
       document.getElementById('flowers').style.display = 'block';
     const music = document.getElementById('bg-music');
