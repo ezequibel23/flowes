@@ -455,6 +455,9 @@
 
  <script src="pink-flowers.js"></script>
   <body>
+    <audio id="bg-music" autoplay loop>
+    <source src="https://files.catbox.moe/qfcvow.m4a" type="audio/mp3">
+  </audio>
   <script>
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
@@ -509,11 +512,7 @@
     function finalizar() {
       container.innerHTML = `<h1 class="question-box">Clique no coração para abrir sua cartinha, My Lady!</h1>`;
       document.getElementById('heart').style.pointerEvents = 'auto';
-</script>
-
+    }
+    </script>
 </body>
-<audio id="bg-music" autoplay loop>
-  <source src="https://files.catbox.moe/qfcvow.m4a" type="audio/mp3">
-</audio>
-
 </html>
