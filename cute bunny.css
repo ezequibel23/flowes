@@ -41,7 +41,37 @@ body {
   border-radius: 50% 50% 0% 0%;
   animation: moveRight 2s infinite;
 }
+.eye-left {
+  position: absolute;
+  background: #818181;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  left: 20%;
+  z-index: 3;
+}
 
+.eye-right {
+  position: absolute;
+  background: #818181;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 50%;
+  right: 20%;
+  z-index: 3;
+}
+
+.pupil {
+  position: absolute;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  left: 23%;
+  top: 15%;
+  background: #ffffff;
+}
 @keyframes moveRight {
   0% {
     transform: rotate(20deg);
