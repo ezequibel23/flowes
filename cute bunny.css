@@ -21,7 +21,7 @@ body {
 }
 
 .ear-left {
-  position: absolute;
+  position: relative;
   background: #f6e8e6;
   width: 33%;
   height: 80%;
@@ -32,7 +32,7 @@ body {
 }
 
 .ear-right {
-  position: absolute;
+  position: relative;
   background: #f6e8e6;
   width: 33%;
   height: 80%;
@@ -42,29 +42,29 @@ body {
   animation: moveRight 2s infinite;
 }
 .eye-left {
-  position: absolute;
+  position: relative;
   background: #818181;
   width: 20px;
-  height: 60px;
+  height: 20px;
   border-radius: 50%;
   top: 50%;
-  left: 20%;
+  left: 5%;
   z-index: 3;
 }
 
 .eye-right {
-  position: absolute;
+  position: relative;
   background: #818181;
   width: 20px;
-  height: 60px;
+  height: 20px;
   border-radius: 50%;
   top: 50%;
-  right: 20%;
+  right: 5%;
   z-index: 3;
 }
 
 .pupil {
-  position: absolute;
+  position: relative;
   border-radius: 50%;
   height: 8px;
   width: 8px;
