@@ -448,8 +448,6 @@
 
  <script src="pink-flowers.js"></script>
   <body>
-  <audio id="bg-music">
-    <source src="https://files.catbox.moe/s2cvqj.mp3" type="audio/mp3">
   <script>
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
@@ -457,5 +455,22 @@
     const music = document.getElementById('bg-music');
     });
   </script>
+    <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    music.volume = 1;
+    music.play().catch((err) => {
+      console.warn("Autoplay bloqueado. Música será tocada no primeiro clique.");
+      document.addEventListener('click', () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
+
 </body>
+<audio id="bg-music" autoplay loop>
+  <source src="https://files.catbox.moe/s2cvqj.mp3" type="audio/mp3">
+</audio>
+
 </html>
