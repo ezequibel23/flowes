@@ -6,41 +6,21 @@ body {
   position: relative;
   margin: auto;
   display: block;
-  width: 200px;
+  width: 600px;
   height: 420px;
 }
 
 .head {
   position: absolute;
-  width: 33%;
-  height: 40%;
-  background: transparente;
-  left: 30%;
-  top: 35%;
+  width: 60px;
+  height: 80px;
+  background: transparent;
+  bottom: 5px;
+  right: 5px;
   border-radius: 50%;
+  z-index: 5;
 }
 
-.ear-left {
-  position: absolute;
-  background: #f6e8e6;
-  width: 33%;
-  height: 80%;
-  bottom: 80%;
-  left: 10%;
-  border-radius: 50% 50% 0% 0%;
-  animation: moveLeft 2s infinite;
-}
-
-.ear-right {
-  position: absolute;
-  background: #f6e8e6;
-  width: 33%;
-  height: 80%;
-  bottom: 80%;
-  right: 10%;
-  border-radius: 50% 50% 0% 0%;
-  animation: moveRight 2s infinite;
-}
 .eye-left {
   position: absolute;
   background: #818181;
@@ -48,7 +28,7 @@ body {
   height: 20px;
   border-radius: 50%;
   top: 50%;
-  left: 20%;
+  left: 5%;
   z-index: 3;
 }
 
@@ -59,8 +39,9 @@ body {
   height: 20px;
   border-radius: 50%;
   top: 50%;
-  right: 20%;
+  right: 5%;
   z-index: 3;
+}
 }
 
 .pupil {
