@@ -8,65 +8,7 @@
   <title>Pedido Especial</title>
   <link rel="stylesheet" href="pink-flowers.css" />
   <link rel="stylesheet" href="cute bunny.css" />
-  
-<style>
-  #container {
-    position: fixed;
-    z-index: 9999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
-
-  #container.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  .question-box {
-    font-size: 28px;
-    font-family: 'Brush Script MT', cursive;
-    color: #e75480;
-    margin-bottom: 20px;
-  }
-
-  .button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 12px;
-    background-color: #ffb6c1;
-    color: white;
-    cursor: pointer;
-    font-family: 'Brush Script MT', cursive;
-    transition: background 0.3s;
-  }
-
-  .button:hover {
-    background-color: #e75480;
-  }
-
-  .flowers {
-    position: absolute !important;
-    z-index: 50;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .card {
-    z-index: 100;
-  }
-</style>
-
+  <style>
     body {
       display: flex;
       justify-content: center;
@@ -164,7 +106,6 @@
     }
   </style>
 
-
 <style>
   #container {
     position: fixed;
@@ -178,6 +119,7 @@
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
     transition: opacity 0.5s ease, visibility 0.5s ease;
+    max-width: 90%;
   }
 
   #container.hidden {
@@ -187,7 +129,7 @@
   }
 
   .question-box {
-    font-size: 28px;
+    font-size: 24px;
     font-family: 'Brush Script MT', cursive;
     color: #e75480;
     margin-bottom: 20px;
@@ -208,86 +150,6 @@
 
   .button:hover {
     background-color: #e75480;
-  }
-
-  .flowers {
-    position: absolute !important;
-    z-index: 50;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .card {
-    z-index: 100;
-  }
-</style>
-
-  #container {
-    position: absolute;
-    z-index: 105;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
-
-  #container.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  .question-box {
-    font-size: 28px;
-    font-family: 'Brush Script MT', cursive;
-    color: #e75480;
-    margin-bottom: 20px;
-  }
-
-  .button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 12px;
-    background-color: #ffb6c1;
-    color: white;
-    cursor: pointer;
-    font-family: 'Brush Script MT', cursive;
-    transition: background 0.3s;
-  }
-
-  .button:hover {
-    background-color: #e75480;
-  }
-
-  .flowers {
-    position: absolute !important;
-    z-index: 50;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .card {
-    z-index: 100;
-  }
-</style>
-
-
-<style>
-  .card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
   }
 </style>
 
@@ -606,6 +468,60 @@
 </div>
 
 
+<script>
+  const container = document.getElementById('container');
+  function resposta1(resposta) {
+    if (resposta === 'sim') {
+      container.innerHTML = `<h1 class="question-box">Por que clicou em NÃO? Você me ama?</h1>
+      <button class="button" onclick="resposta2('sim')">SIM</button>
+      <button class="button" onclick="resposta2('nao')">NÃO</button>`;
+    } else {
+      resposta1('sim');
+    }
+  }
+
+  function resposta2(resposta) {
+    container.innerHTML = `<h1 class="question-box">Então prove, me mande uma foto de calcinha</h1>
+    <button class="button" onclick="resposta3('romantico')">Isso foi romântico</button>
+    <button class="button" onclick="resposta3('babaca')">Isso foi babaca</button>`;
+  }
+
+  function resposta3(_) {
+    container.innerHTML = `<h1 class="question-box">Perdon My Lady, estaja zuando, então você é minha princesinha?</h1>
+    <button class="button" onclick="resposta4()">SIM</button>
+    <button class="button" onclick="resposta4()">NÃO</button>`;
+  }
+
+  function resposta4() {
+    container.innerHTML = `<h1 class="question-box">Prove seu amor: quem você prefere, eu ou o Taehyung?</h1>
+    <button class="button" onclick="resposta5()">Você</button>
+    <button class="button" onclick="resposta5()">Taehyung</button>`;
+  }
+
+  function resposta5() {
+    container.innerHTML = `<h1 class="question-box">Te amo te amo Leti Leti! Quer a cartinha?</h1>
+    <button class="button" onclick="finalizar()">SIM</button>
+    <button class="button" onclick="finalizar()">NÃO</button>`;
+  }
+
+  function finalizar() {
+    container.innerHTML = `<h1 class="question-box">Clique no coração para abrir sua cartinha, My Lady!</h1>`;
+    document.getElementById('heart').style.pointerEvents = 'auto';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('heart').style.pointerEvents = 'none';
+  });
+</script>
+
+
+<!-- QUESTIONÁRIO INICIAL -->
+<div id="container">
+  <h1 class="question-box">My lady gostaria de receber essa cartinha?</h1>
+  <button class="button" onclick="resposta1('sim')">SIM</button>
+  <button class="button" onclick="resposta1('nao')">NÃO</button>
+</div>
+
 
 <script>
   const container = document.getElementById('container');
@@ -661,65 +577,6 @@
     document.getElementById('heart').style.pointerEvents = 'none';
   });
 </script>
-
-
-
-
-<script>
-  const container = document.getElementById('container');
-
-  function updateQuestion(html) {
-    container.style.opacity = '0';
-    setTimeout(() => {
-      container.innerHTML = html;
-      container.style.opacity = '1';
-    }, 300);
-  }
-
-  function resposta1(resposta) {
-    if (resposta === 'sim') {
-      updateQuestion(`<h1 class="question-box">Por que clicou em NÃO? Você me ama?</h1>
-      <button class="button" onclick="resposta2('sim')">SIM</button>
-      <button class="button" onclick="resposta2('nao')">NÃO</button>`);
-    } else {
-      resposta1('sim');
-    }
-  }
-
-  function resposta2(resposta) {
-    updateQuestion(`<h1 class="question-box">Então prove, me mande uma foto de calcinha</h1>
-    <button class="button" onclick="resposta3('romantico')">Isso foi romântico</button>
-    <button class="button" onclick="resposta3('babaca')">Isso foi babaca</button>`);
-  }
-
-  function resposta3(_) {
-    updateQuestion(`<h1 class="question-box">Perdon My Lady, estaja zuando, então você é minha princesinha?</h1>
-    <button class="button" onclick="resposta4()">SIM</button>
-    <button class="button" onclick="resposta4()">NÃO</button>`);
-  }
-
-  function resposta4() {
-    updateQuestion(`<h1 class="question-box">Prove seu amor: quem você prefere, eu ou o Taehyung?</h1>
-    <button class="button" onclick="resposta5()">Você</button>
-    <button class="button" onclick="resposta5()">Taehyung</button>`);
-  }
-
-  function resposta5() {
-    updateQuestion(`<h1 class="question-box">Te amo te amo Leti Leti! Quer a cartinha?</h1>
-    <button class="button" onclick="finalizar()">SIM</button>
-    <button class="button" onclick="finalizar()">NÃO</button>`);
-  }
-
-  function finalizar() {
-    container.classList.add('hidden');
-    document.getElementById('heart').style.pointerEvents = 'auto';
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('heart').style.pointerEvents = 'none';
-  });
-</script>
-
 
 </body>
 </html>
@@ -759,7 +616,90 @@
 
  <script src="pink-flowers.js"></script>
   <body>
-  
+  <script>
+    document.getElementById('heart').addEventListener('click', () => {
+      document.getElementById('card').classList.add('open');
+      document.getElementById('flowers').style.display = 'block';
+    const music = document.getElementById('bg-music');
+    });
+  </script>
+    <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    music.volume = 1;
+    music.play().catch((err) => {
+      console.warn("Autoplay bloqueado. Música será tocada no primeiro clique.");
+      document.addEventListener('click', () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
+
+
+<!-- QUESTIONÁRIO INICIAL -->
+<div id="container">
+  <h1 class="question-box">My lady gostaria de receber essa cartinha?</h1>
+  <button class="button" onclick="resposta1('sim')">SIM</button>
+  <button class="button" onclick="resposta1('nao')">NÃO</button>
+</div>
+
+
+<script>
+  const container = document.getElementById('container');
+  function resposta1(resposta) {
+    if (resposta === 'sim') {
+      container.innerHTML = `<h1 class="question-box">Por que clicou em NÃO? Você me ama?</h1>
+      <button class="button" onclick="resposta2('sim')">SIM</button>
+      <button class="button" onclick="resposta2('nao')">NÃO</button>`;
+    } else {
+      resposta1('sim');
+    }
+  }
+
+  function resposta2(resposta) {
+    container.innerHTML = `<h1 class="question-box">Então prove, me mande uma foto de calcinha</h1>
+    <button class="button" onclick="resposta3('romantico')">Isso foi romântico</button>
+    <button class="button" onclick="resposta3('babaca')">Isso foi babaca</button>`;
+  }
+
+  function resposta3(_) {
+    container.innerHTML = `<h1 class="question-box">Perdon My Lady, estaja zuando, então você é minha princesinha?</h1>
+    <button class="button" onclick="resposta4()">SIM</button>
+    <button class="button" onclick="resposta4()">NÃO</button>`;
+  }
+
+  function resposta4() {
+    container.innerHTML = `<h1 class="question-box">Prove seu amor: quem você prefere, eu ou o Taehyung?</h1>
+    <button class="button" onclick="resposta5()">Você</button>
+    <button class="button" onclick="resposta5()">Taehyung</button>`;
+  }
+
+  function resposta5() {
+    container.innerHTML = `<h1 class="question-box">Te amo te amo Leti Leti! Quer a cartinha?</h1>
+    <button class="button" onclick="finalizar()">SIM</button>
+    <button class="button" onclick="finalizar()">NÃO</button>`;
+  }
+
+  function finalizar() {
+    container.innerHTML = `<h1 class="question-box">Clique no coração para abrir sua cartinha, My Lady!</h1>`;
+    document.getElementById('heart').style.pointerEvents = 'auto';
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('heart').style.pointerEvents = 'none';
+  });
+</script>
+
+
+<!-- QUESTIONÁRIO INICIAL -->
+<div id="container">
+  <h1 class="question-box">My lady gostaria de receber essa cartinha?</h1>
+  <button class="button" onclick="resposta1('sim')">SIM</button>
+  <button class="button" onclick="resposta1('nao')">NÃO</button>
+</div>
+
+
 <script>
   const container = document.getElementById('container');
 
@@ -814,65 +754,6 @@
     document.getElementById('heart').style.pointerEvents = 'none';
   });
 </script>
-
-
-
-
-<script>
-  const container = document.getElementById('container');
-
-  function updateQuestion(html) {
-    container.style.opacity = '0';
-    setTimeout(() => {
-      container.innerHTML = html;
-      container.style.opacity = '1';
-    }, 300);
-  }
-
-  function resposta1(resposta) {
-    if (resposta === 'sim') {
-      updateQuestion(`<h1 class="question-box">Por que clicou em NÃO? Você me ama?</h1>
-      <button class="button" onclick="resposta2('sim')">SIM</button>
-      <button class="button" onclick="resposta2('nao')">NÃO</button>`);
-    } else {
-      resposta1('sim');
-    }
-  }
-
-  function resposta2(resposta) {
-    updateQuestion(`<h1 class="question-box">Então prove, me mande uma foto de calcinha</h1>
-    <button class="button" onclick="resposta3('romantico')">Isso foi romântico</button>
-    <button class="button" onclick="resposta3('babaca')">Isso foi babaca</button>`);
-  }
-
-  function resposta3(_) {
-    updateQuestion(`<h1 class="question-box">Perdon My Lady, estaja zuando, então você é minha princesinha?</h1>
-    <button class="button" onclick="resposta4()">SIM</button>
-    <button class="button" onclick="resposta4()">NÃO</button>`);
-  }
-
-  function resposta4() {
-    updateQuestion(`<h1 class="question-box">Prove seu amor: quem você prefere, eu ou o Taehyung?</h1>
-    <button class="button" onclick="resposta5()">Você</button>
-    <button class="button" onclick="resposta5()">Taehyung</button>`);
-  }
-
-  function resposta5() {
-    updateQuestion(`<h1 class="question-box">Te amo te amo Leti Leti! Quer a cartinha?</h1>
-    <button class="button" onclick="finalizar()">SIM</button>
-    <button class="button" onclick="finalizar()">NÃO</button>`);
-  }
-
-  function finalizar() {
-    container.classList.add('hidden');
-    document.getElementById('heart').style.pointerEvents = 'auto';
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('heart').style.pointerEvents = 'none';
-  });
-</script>
-
 
 </body>
 <audio id="bg-music" autoplay loop>
