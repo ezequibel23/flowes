@@ -15,7 +15,7 @@ body {
   width: 50px;
   height: 55px;
   background: #f6e8e6;
-  bottom: 0px;
+  bottom: -2px;
   right: 15px;
   border-radius: 50%;
   z-index: 5;
