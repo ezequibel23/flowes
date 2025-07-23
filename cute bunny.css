@@ -12,12 +12,13 @@ body {
 
 .head {
   position: absolute;
-  width: 33%;
-  height: 40%;
+  width: 60px;
+  height: 80px;
   background: #f6e8e6;
-  left: 30%;
-  top: 35%;
+  bottom: -10px; /* empurra um pouco para baixo */
+  right: -10px;  /* empurra um pouco para a direita */
   border-radius: 50%;
+  z-index: 5;
 }
 
 .ear-left {
@@ -59,7 +60,7 @@ body {
   height: 20px;
   border-radius: 50%;
   top: 50%;
-  left: 20%;
+  left: 5%;
   z-index: 3;
 }
 
@@ -70,7 +71,7 @@ body {
   height: 20px;
   border-radius: 50%;
   top: 50%;
-  right: 20%;
+  right: 5%;
   z-index: 3;
 }
 
@@ -137,6 +138,7 @@ body {
     transform-origin: bottom right;
   }
 }
+
 @keyframes moveLeft {
   0% {
     transform: rotate(-20deg);
@@ -151,3 +153,4 @@ body {
     transform-origin: bottom left;
   }
 }
+
