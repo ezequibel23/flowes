@@ -449,7 +449,8 @@
  <script src="pink-flowers.js"></script>
   <body>
   <script>
-    let aceita = confirm("My lady gostaria de receber essa cartinha?");
+    document.getElementById('heart').addEventListener('click', () => {
+      let aceita = confirm("My lady gostaria de receber essa cartinha?");
   if (aceita) {
     document.getElementById('card').classList.add('open');
   } else {
@@ -467,7 +468,6 @@
     alert("Te amo te amo Leti Leti");
     let querCartinha = confirm("Quer a cartinha SIM ou NÃO?");
     if (querCartinha) 
-    document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
       document.getElementById('flowers').style.display = 'block';
     const music = document.getElementById('bg-music');
