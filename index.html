@@ -449,9 +449,18 @@
       
   <script src="pink-flowers.js"></script>
   <script>
-    document.getElementById('heart').addEventListener('click', () => {
-      document.getElementById('card').classList.add('open');
-    });
+    <audio id="bg-music" autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg" />
+</audio>
+
+<script>
+  document.getElementById('heart').addEventListener('click', () => {
+    document.getElementById('card').classList.add('open');
+    document.getElementById('flowers').style.display = 'block';
+    document.getElementById('bg-music').play();
+  });
+</script>
+
   </script>
 </body>
 </html>
