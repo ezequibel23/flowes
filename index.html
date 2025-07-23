@@ -447,15 +447,15 @@
   </div>
 
  <script src="pink-flowers.js"></script>
+<audio id="bg-music" autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg" />
+</audio>
   <script>
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
       document.getElementById('flowers').style.display = 'block';
-    document.getElementById('bg-music').play();
+    const music = document.getElementById('bg-music');
     });
   </script>
-<audio id="bg-music" autoplay loop>
-  <source src="musica.mp3" type="audio/mpeg" />
-</audio>
 </body>
 </html>
