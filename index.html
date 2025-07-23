@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pedido Especial</title>
   <link rel="stylesheet" href="pink-flowers.css" />
-  <link rel="stylesheet" href="cute bunny.css" />
   <style>
     body {
       display: flex;
@@ -108,7 +107,7 @@
 <body class="not-loaded">
   <!-- FLORES ORIGINAIS COMPLETAS -->
   <div class="night"></div>
-  <div class="flowers"> id="flowers" style="display: none;">
+  <div class="flowers">
     <div class="flower flower--1">
         <div class="flower__leafs flower__leafs--1">
           <div class="flower__leaf flower__leaf--1"></div>
@@ -419,15 +418,6 @@
   <div class="card-inner">
     <div class="card-front">
       <div class="heart" id="heart"></div>
-      <div class="head" id="bunny-head">
-  <div class="ear-left"><div class="inner-ear"></div></div>
-  <div class="ear-right"><div class="inner-ear"></div></div>
-  <div class="eye-left"><div class="pupil"></div></div>
-  <div class="eye-right"><div class="pupil"></div></div>
-  <div class="nose"><div class="line"></div></div>
-  <div class="blush-left"></div>
-  <div class="blush-right"></div>
-</div>
     </div>
     <div class="card-back" style="text-align: center;">
       <img src="namorada.jpg" style="width: 100px; border-radius: 50%; margin-bottom: 10px;" />
@@ -436,44 +426,26 @@
     </div>
   </div>
 </div>
-        </div>
-      </div>
-      <div class="card-back" style="text-align: center;">
-        <img src="namorada.jpg" alt="namorada" />
-        <div class="message">Falando em cabelo bonito, lembrei de você</div>
-        <div class="question">Aceita ser minha namorada?</div>
-      </div>
-    </div>
-  </div>
 
- <script src="pink-flowers.js"></script>
-  <body>
+      
+  <script src="pink-flowers.js"></script>
   <script>
-   document.getElementById('heart').addEventListener('click', () => {
-  let aceita = confirm("My lady gostaria de receber essa cartinha?");
-  if (aceita) {
-    document.getElementById('card').classList.add('open');
-  } else {
-    let ama = confirm("Por que clicou em NÃO? Você me ama?");
-    if (ama) {
-      let prova = confirm("Então prove, me mande uma foto de calcinha");
-      if (prova) {
-        alert("Isso foi romântico ou isso foi babaca?");
-      } else {
-        alert("Isso foi romântico ou isso foi babaca?");
-      }
-    }
-    let princesinha = confirm("Perdón my lady, estava zuando. Então você é minha princesinha?");
-    let preferencia = confirm("Prove seu amor: quem você prefere, eu ou o Taehyung?");
-    alert("Te amo te amo Leti Leti");
-    let querCartinha = confirm("Quer a cartinha SIM ou NÃO?");
-    if (querCartinha) {
+    document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
-</script>
-
+    });
+  </script>
+window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('bg-music');
+    music.volume = 1;
+    music.play().catch((err) => {
+      console.warn("Autoplay bloqueado. Música será tocada no primeiro clique.");
+      document.addEventListener('click', () => {
+        music.play();
+      }, { once: true });
+    });
+  });
 </body>
 <audio id="bg-music" autoplay loop>
-  <source src="https://files.catbox.moe/ounzme.mp3" type="audio/mp3">
+  <source src="https://files.catbox.moe/s2cvqj.mp3" type="audio/mp3">
 </audio>
-
 </html>
