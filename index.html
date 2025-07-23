@@ -415,6 +415,79 @@
   </div>
 
   <!-- CARTA -->
+<body class="not-loaded">
+  <!-- Perguntas iniciais -->
+  <div id="question-container" style="text-align:center; font-family: Arial; margin-top:50px;">
+    <h1 id="question-text">My lady gostaria de receber essa cartinha?</h1>
+    <div>
+      <button class="button" id="btn-sim">SIM</button>
+      <button class="button" id="btn-nao">NÃO</button>
+    </div>
+  </div>
+
+  <!-- Coração e carta -->
+  <div class="card" id="card" style="display:none;">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="heart" id="heart"></div>
+      </div>
+      <div class="card-back" style="text-align:center;">
+        <img src="namorada.jpg" style="width: 100px; border-radius: 50%; margin-bottom: 10px;" />
+        <div class="message" style="font-size: 16px; margin-bottom: 5px;">Falando em cabelo bonito, lembrei de você</div>
+        <div class="question" style="font-size: 18px; font-weight: bold; margin-top: 2px;">Aceita ser minha namorada?</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+const perguntas = [
+  {texto: "My lady gostaria de receber essa cartinha?", sim: 1, nao: 2},
+  {texto: "Então prove, me mande uma foto de calcinha<br>(Isso foi romântico ou isso foi babaca?)", sim: 3, nao: 3},
+  {texto: "Perdón my lady, estava zuando.<br>Então você é minha princesinha?", sim: 4, nao: 4},
+  {texto: "Prove seu amor: quem você prefere, eu ou o Taehyung?", sim: 5, nao: 5},
+  {texto: "Te amo te amo Leti Leti<br>Quer a cartinha SIM ou NÃO?", sim: "fim", nao: "fim"}
+];
+
+let etapa = 0;
+const questionText = document.getElementById("question-text");
+const btnSim = document.getElementById("btn-sim");
+const btnNao = document.getElementById("btn-nao");
+
+function mostrarPergunta(index){
+  questionText.innerHTML = perguntas[index].texto;
+  etapa = index;
+}
+
+btnSim.addEventListener("click", ()=>{
+  if(perguntas[etapa].sim === "fim"){
+    finalizarPerguntas();
+  } else {
+    mostrarPergunta(perguntas[etapa].sim);
+  }
+});
+
+btnNao.addEventListener("click", ()=>{
+  if(perguntas[etapa].nao === "fim"){
+    finalizarPerguntas();
+  } else {
+    mostrarPergunta(perguntas[etapa].nao);
+  }
+});
+
+function finalizarPerguntas(){
+  document.getElementById("question-container").style.display = "none";
+  document.getElementById("card").style.display = "block";
+}
+
+document.getElementById('heart').addEventListener('click', () => {
+  document.getElementById('card').classList.add('open');
+});
+
+// mostrar a primeira pergunta
+mostrarPergunta(0);
+</script>
+</body>
+
 <div class="card" id="card">
   <div class="card-inner">
     <div class="card-front">
@@ -448,30 +521,6 @@
 
  <script src="pink-flowers.js"></script>
   <script>
-    window.onload = () => {
-  // perguntas ao carregar a página
-  let aceita = confirm("My lady gostaria de receber essa cartinha?");
-  if (!aceita) {
-    let ama = confirm("Por que clicou em NÃO? Você me ama?");
-    if (ama) {
-      let prova = confirm("Então prove, me mande uma foto de calcinha");
-      alert("Isso foi romântico ou isso foi babaca?");
-    }
-    confirm("Perdón my lady, estava zuando. Então você é minha princesinha?");
-    confirm("Prove seu amor: quem você prefere, eu ou o Taehyung?");
-    alert("Te amo te amo Leti Leti");
-    aceita = confirm("Quer a cartinha SIM ou NÃO?");
-  }
-
-  // se no final aceitar, ativa o clique no coração
-  if (aceita) {
-    document.getElementById('heart').addEventListener('click', () => {
-      document.getElementById('card').classList.add('open');
-    });
-  } else {
-    alert("Então nada de cartinha por enquanto 😢");
-  }
-};
     document.getElementById('heart').addEventListener('click', () => {
       document.getElementById('card').classList.add('open');
       document.getElementById('flowers').style.display = 'block';
