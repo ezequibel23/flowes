@@ -8,7 +8,65 @@
   <title>Pedido Especial</title>
   <link rel="stylesheet" href="pink-flowers.css" />
   <link rel="stylesheet" href="cute bunny.css" />
-  <style>
+  
+<style>
+  #container {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  #container.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .question-box {
+    font-size: 28px;
+    font-family: 'Brush Script MT', cursive;
+    color: #e75480;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffb6c1;
+    color: white;
+    cursor: pointer;
+    font-family: 'Brush Script MT', cursive;
+    transition: background 0.3s;
+  }
+
+  .button:hover {
+    background-color: #e75480;
+  }
+
+  .flowers {
+    position: absolute !important;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card {
+    z-index: 100;
+  }
+</style>
+
     body {
       display: flex;
       justify-content: center;
@@ -106,7 +164,65 @@
     }
   </style>
 
+
 <style>
+  #container {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  #container.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .question-box {
+    font-size: 28px;
+    font-family: 'Brush Script MT', cursive;
+    color: #e75480;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffb6c1;
+    color: white;
+    cursor: pointer;
+    font-family: 'Brush Script MT', cursive;
+    transition: background 0.3s;
+  }
+
+  .button:hover {
+    background-color: #e75480;
+  }
+
+  .flowers {
+    position: absolute !important;
+    z-index: 50;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card {
+    z-index: 100;
+  }
+</style>
+
   #container {
     position: absolute;
     z-index: 105;
